@@ -1,0 +1,31 @@
+{
+    "cmd": "env && python3 -m http.server $PORT0",
+    "container": {
+        "docker": {
+            "image": "python:3-slim"
+        },
+        "type": "DOCKER"
+    },
+    "cpus": 0.20,
+    "healthChecks": [
+        {
+            "gracePeriodSeconds": 3,
+            "intervalSeconds": 10,
+            "maxConsecutiveFailures": 3,
+            "path": "/helth",
+            "portIndex": 0,
+            "protocol": "HTTP",
+            "timeoutSeconds": 5
+        }
+    ],
+    "id": "python-app",
+    "instances": 2,
+    "mem": 1000,
+    "ports": [
+        0
+    ],
+    "upgradeStrategy": {
+        "minimumHealthCapacity": 0.5,
+        "maximumOverCapacity": 0.5
+    }
+}

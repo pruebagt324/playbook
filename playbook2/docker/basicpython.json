@@ -1,0 +1,13 @@
+{
+    "id": "mypythonapp",
+    "container": {
+        "docker": {
+            "image": "mypythonapp"
+        },
+        "type": "DOCKER",
+        "volumes": []
+    },
+    "cpus": 0.2,
+    "mem": 32.0,
+    "instances": 1
+}

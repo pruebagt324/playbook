@@ -1,0 +1,6 @@
+Host proxya 159.65.160.110
+  HostName 159.65.160.110
+  port 22
+  user root
+  IdentitiesOnly yes
+  IdentityFile "C:\Users\EstelaChayoMonse\.ssh\proxya.pem"

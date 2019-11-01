@@ -1,0 +1,13 @@
+{                                              
+  "id": "ubuntu",
+  "cmd": "while sleep 10; do date -u +%T; done",
+  "cpus": 0.5,                               
+  "mem": 128,                                
+  "uris": [],  
+  "container": {                               
+    "type": "DOCKER",                          
+    "docker": {                                
+      "image": "libmesos/ubuntu"               
+    }                                          
+  }
+} 

@@ -1,0 +1,28 @@
+{
+  "id": "webapp500",
+  "cmd": "python3 -m http.server 8080",
+  "cpus": 0.25,
+  "mem": 500.0,
+  "instances": 1,
+  "networks": [ { "mode": "container/bridge" } ],
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "python:3-slim"
+    },
+    "portMappings": [
+      { "containerPort": 8080, "hostPort": 9000, "servicePort": 9000, "protocol": "tcp" },
+      { "containerPort": 161, "hostPort": 10100, "protocol": "udp"}
+    ]
+  },
+  "healthChecks": [
+    {
+      "protocol": "HTTP",
+      "portIndex": 0,
+      "path": "/",
+      "gracePeriodSeconds": 5,
+      "intervalSeconds": 20,
+      "maxConsecutiveFailures": 3
+    }
+  ]
+}
